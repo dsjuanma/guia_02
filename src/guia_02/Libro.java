@@ -1,5 +1,7 @@
 package guia_02;
 
+import java.io.PrintStream;
+import java.util.Arrays;
 
 /****************************************************************
  *
@@ -29,27 +31,26 @@ package guia_02;
 public class Libro {
 
     //Atributos
-    private String titulo = "Effective Java";
-    private double precio = 450;
-    private int stock = 150;
-    private String nombre = "Joshua";
-    private String apellido = "Bloch";
-    private String email = "joshua@email.com";
-    private char genero = 'M';
+    private String titulo;
+    private double precio;
+    private int stock;
+    private String nombre;
+    private String apellido;
+    private String email;
+    private char genero;
+    private Autor[] autores;
+
 
     //Constructor
     public Libro() {
 
     }
 
-    public Libro(String titulo, double precio, int stock, String nombre, String apellido, String email, char genero) {
+    public Libro(String titulo, double precio, int stock, Autor[] autores) {
         this.titulo = titulo;
         this.precio = precio;
         this.stock = stock;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.email = email;
-        this.genero = genero;
+        this.autores = autores;
     }
 
     //Getter y Setter
@@ -77,71 +78,58 @@ public class Libro {
         this.stock = stock;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public char getGenero() {
-        return genero;
-    }
-
-    public void setGenero(char genero) {
-        this.genero = genero;
+    public Autor[] getAutor() {
+        return autores;
     }
 
     /*
-    b. Imprima por pantalla al autor previamente instanciado.
-     */
-    public String imprimeAutor() {
-        return "Nombre:" + this.nombre + " | " + " Apellido:" + this.apellido + " | " + " Email:" + this.email + " | " + " Genero:" + this.genero;
+    e. Modifique el precio del libro “Effective Java” a 500 pesos y aumente la
+    *  cantidad en 50 copias.
+    */
+    public double cambioPrecio() {
+        return this.precio = 500;
     }
-   /*
-   e. Modifique el precio del libro “Effective Java” a 500 pesos y aumente la
-   *  cantidad en 50 copias.
-   */
-    public String cambioTitulo(String nombreLibro){
-        return this.titulo = nombreLibro;
+
+    public int cambioStock() {
+        return this.stock += 50;
     }
+
+
     /*
      *  f. Imprima por pantalla los atributos del Autor Joshua, accediendo desde el
      *  Libro “Effective Java”.
+     *
      */
-    public String buscaAutoreImprime(String buscaAutor){
-        if(this.nombre == buscaAutor){
-            return "Lirbo:" + this.titulo + " | " + " Precio:" + this.precio + " | " + " Stock:" + this.stock ;
-        }else{
-            System.out.println("Autor no encontrado...");
+    @Override
+    public String toString() {
+        return "\nLibro: " +
+                "\nTitulo:...... " + this.titulo +
+                "\nPrecio:...... " + this.precio +
+                "\nStock:....... " + this.stock+
+                "\n" + Arrays.toString(this.autores);
+    }
+
+
+
+    /*
+     *  h. Modificar la clase Libro, para que acepte más de 1 Autor. Y realizar los
+     *     cambios necesarios en el método del punto g, para imprimir un nuevo
+     *     mensaje que liste los autores que contribuyeron a ese libro.
+     */
+
+
+
+    public String mostrarMensaje() {
+        StringBuilder nombreApellido = new StringBuilder();
+        for (Autor i : autores) {
+            if (i != null) {
+                nombreApellido.append(i.getNombre());
+                nombreApellido.append(" ");
+                nombreApellido.append(i.getApellido());
+            }
         }
-
+        return "El libro, " + "'" + this.titulo + "'" + " de " + "'" + nombreApellido + "'" + "." + " Se vende a " + "'$" + this.precio + "'" + " pesos.";
     }
-    /* Metodo que se habia creado para llamar en el metodo de Busca autor e Imprime, se decidio mostrar todo en un mismo metodo
-
-    public String imprimeLibro() {
-        return "Lirbo:" + this.titulo + " | " + " Precio:" + this.precio + " | " + " Stock:" + this.stock ;
-    }
-
-     */
-
 
 
 }

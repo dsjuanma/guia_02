@@ -1,8 +1,9 @@
 package guia_02;
 
-import javax.swing.filechooser.FileSystemView;
-import java.io.PrintStream;
+import java.util.Arrays;
 import java.util.Scanner;
+
+
 
 public class Main {
 
@@ -16,16 +17,50 @@ public class Main {
             selected = menu();
             switch (selected) {
                 case 1:
-                    Libro autor = new Libro();
+                    Autor Joshua = new Autor("Joshua", "Bloch", "joshua@email.com", 'M');
 
-                    System.out.println("Ingrese el nuevo nombre del libro ");
-                    String nombre = scan.next();
-                    autor.setTitulo(nombre);
-                    System.out.println(autor.imprimeAutor());
+                    Autor[] autores = new Autor[10];
+                    autores[0] = Joshua;
+                    System.out.println("Autor Princial");
+                    System.out.print(Joshua);
+                    System.out.println("\n");
+                    Libro libro = new Libro("Effective Java", 450, 150, autores);
+                    // System.out.println("Datos iniciales del Libro\n");
+                    System.out.println(libro);
+                    System.out.println("\n");
+
+                    //libro.cambioPrecio();
+                    // libro.cambioStock();
+                    /*
+
+
+                    System.out.println(Arrays.toString(libro.getAutor()));
+                    System.out.println("\n");
+
+                   // System.out.println(libro.mostrarMensaje());
+
+                    Autor autor1 = new Autor("Alan", "Brado", "Semtex@gmail.com", 'M');
+                    Autor autor2 = new Autor("Esteban", "Kito", "demadera@hotmail.com", 'M');
+
+                    autores[1] = autor1;
+                    autores[2] = autor2;
+
+                    Libro libro1 = new Libro("Effective Java", 500, 200, autores);
+                    System.out.println(libro1);
+
+                     */
                     Pausa.pausar();
                     limpiarPantalla();
                     break;
                 case 2:
+                    Cliente aron = new Cliente("Aron", "nassa@gmail.com", 0.20);
+                    System.out.println(aron.toString());
+                    Factura nuevoCliente = new Factura(aron, 13000);
+                    System.out.println(nuevoCliente.toString());
+                    Venta nuevaVenta = new Venta("Pan","Pan rallado",200);
+                    Venta nuevaVenta2 = new Venta("Leche","Leche descremada",300);
+                    System.out.println(nuevaVenta.toString());
+                    System.out.println(nuevaVenta2.toString());
 
 
                     Pausa.pausar();
@@ -62,9 +97,6 @@ public class Main {
         System.out.println("\t   [1].Ejercicio 01.");
         System.out.println("\t   [2].Ejercicio 02.");
         System.out.println("\t   [3].Ejercicio 03.");
-        System.out.println("\t   [4].Ejercicio 04.");
-        System.out.println("\t   [5].Ejercicio 05.");
-
         System.out.println("\n\t____________________________________________________________________");
         System.out.println("\n");
         System.out.println("\t   [0].Salir del programa.");
