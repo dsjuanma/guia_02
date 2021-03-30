@@ -21,11 +21,11 @@ public class Venta {
 
     }
 
-    public Venta(String nombre, String descripcion, double precio,Venta item) {
+    public Venta(String nombre, String descripcion, double precio) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
-        this.item = item;
+
     }
 
     public UUID getId() {
@@ -60,13 +60,7 @@ public class Venta {
         this.precio = precio;
     }
 
-    public Venta[] getItem() {
-        return item;
-    }
 
-    public void setItem(Venta[] item) {
-        this.item = item;
-    }
 
     @Override
     public String toString() {

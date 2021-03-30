@@ -120,7 +120,7 @@ public class Libro {
 
 
     public String mostrarMensaje() {
-        StringBuilder nombreApellido = new StringBuilder();
+       StringBuilder nombreApellido = new StringBuilder();
         for (Autor i : autores) {
             if (i != null) {
                 nombreApellido.append(i.getNombre());
@@ -128,6 +128,7 @@ public class Libro {
                 nombreApellido.append(i.getApellido());
             }
         }
+
         return "El libro, " + "'" + this.titulo + "'" + " de " + "'" + nombreApellido + "'" + "." + " Se vende a " + "'$" + this.precio + "'" + " pesos.";
     }
 

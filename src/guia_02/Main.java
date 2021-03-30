@@ -19,36 +19,27 @@ public class Main {
                 case 1:
                     Autor Joshua = new Autor("Joshua", "Bloch", "joshua@email.com", 'M');
 
-                    Autor[] autores = new Autor[10];
+                    Autor[] autores = new Autor[3];
                     autores[0] = Joshua;
                     System.out.println("Autor Princial");
                     System.out.print(Joshua);
                     System.out.println("\n");
                     Libro libro = new Libro("Effective Java", 450, 150, autores);
-                    // System.out.println("Datos iniciales del Libro\n");
+                     System.out.println("Datos iniciales del Libro\n");
                     System.out.println(libro);
                     System.out.println("\n");
 
-                    //libro.cambioPrecio();
-                    // libro.cambioStock();
-                    /*
-
-
+                     libro.cambioPrecio();
+                     libro.cambioStock();
                     System.out.println(Arrays.toString(libro.getAutor()));
-                    System.out.println("\n");
-
-                   // System.out.println(libro.mostrarMensaje());
+                    System.out.println(libro.mostrarMensaje());
 
                     Autor autor1 = new Autor("Alan", "Brado", "Semtex@gmail.com", 'M');
                     Autor autor2 = new Autor("Esteban", "Kito", "demadera@hotmail.com", 'M');
-
                     autores[1] = autor1;
                     autores[2] = autor2;
-
                     Libro libro1 = new Libro("Effective Java", 500, 200, autores);
                     System.out.println(libro1);
-
-                     */
                     Pausa.pausar();
                     limpiarPantalla();
                     break;
