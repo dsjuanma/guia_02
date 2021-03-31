@@ -18,7 +18,6 @@ public class Factura {
 
     public Factura(Cliente cliente, Venta[] item) {
         this.cliente = cliente;
-        // this.monto = monto;
         this.item = item;
     }
 
@@ -54,9 +53,6 @@ public class Factura {
         this.date = date;
     }
 
-    public double cantidadDescuento(double monto) {
-        return monto * (1 - cliente.getDescuento());
-    }
 
     public Venta[] getItem() {
         return item;

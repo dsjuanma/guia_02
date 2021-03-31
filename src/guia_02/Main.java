@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 
-
 public class Main {
 
 
@@ -18,22 +17,19 @@ public class Main {
             switch (selected) {
                 case 1:
                     Autor autor = new Autor("Joshua", "Bloch", "joshua@email.com", 'M');
-
                     Autor[] autores = new Autor[3];
                     autores[0] = autor;
                     System.out.println("Autor Princial");
                     System.out.print(autor);
                     System.out.println("\n");
                     Libro libro = new Libro("Effective Java", 450, 150, autores);
-                     System.out.println("Datos iniciales del Libro\n");
+                    System.out.println("Datos iniciales del Libro\n");
                     System.out.println(libro);
                     System.out.println("\n");
-
-                     libro.cambioPrecio();
-                     libro.cambioStock();
+                    libro.cambioPrecio();
+                    libro.cambioStock();
                     System.out.println(Arrays.toString(libro.getAutor()));
                     System.out.println(libro.mostrarMensaje());
-
                     Autor autor1 = new Autor("Alan", "Brado", "Semtex@gmail.com", 'M');
                     Autor autor2 = new Autor("Esteban", "Kito", "demadera@hotmail.com", 'M');
                     autores[1] = autor1;
@@ -46,25 +42,20 @@ public class Main {
                 case 2:
                     System.out.println("Datos del CLiente: ");
                     Cliente cliente = new Cliente("Aron", "nassa@gmail.com", 0.20);
-                    Venta[] ventas = new Venta[4];
+                    Venta[] ventas = new Venta[3];
                     System.out.println(cliente.toString());
-                    Venta venta1 = new Venta("Pan","Pan rallado",200);
-                    ventas[1] =venta1;
-                    Venta venta2 = new Venta("Leche","Leche descremada",300);
-                    ventas[2]=venta2;
-                    System.out.println("Datos de La Facturacion: ");
-                    Factura factura1 = new Factura(cliente,ventas);
+                    Venta venta1 = new Venta("Pan", "Pan rallado", 200);
+                    ventas[1] = venta1;
+                    Venta venta2 = new Venta("Leche", "Leche descremada", 300);
+                    ventas[2] = venta2;
+                    System.out.println("\nDatos de La Facturacion: ");
+                    Factura factura1 = new Factura(cliente, ventas);
                     System.out.println(factura1);
-                    System.out.println(ventas);
-                    System.out.println("Monto Total de la Compra: "+ factura1.totalCompra());
-                    System.out.println("Monto de la compra con Descuento: "+ factura1.totalDescuento());
+                    System.out.println("Monto Total de la Compra: " + factura1.totalCompra());
+                    System.out.println("Monto de la compra con Descuento: " + factura1.totalDescuento());
 
 
-
-
-
-
-                    System.out.println("\n" );
+                    System.out.println("\n");
 
 
                     Pausa.pausar();
