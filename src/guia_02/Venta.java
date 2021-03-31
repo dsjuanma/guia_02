@@ -26,6 +26,7 @@ public class Venta {
         this.descripcion = descripcion;
         this.precio = precio;
 
+
     }
 
     public UUID getId() {
@@ -60,16 +61,13 @@ public class Venta {
         this.precio = precio;
     }
 
+    public Venta[] getItem() {
+        return item;
+    }
 
 
     @Override
     public String toString() {
-        return "Factura[id= " + id + " ,  Producto= " + nombre + " , Descripcion del producto= " + descripcion + "Precio= " + precio + " ]";
-    }
-
-    public double totalCompra() {
-        double total = 0;
-        return total += precio;
-
+        return "\n"+"Factura[id= " + id + " ,  Producto= " + nombre + " , Descripcion del producto= " + descripcion + ", Precio= " + precio + " ]";
     }
 }

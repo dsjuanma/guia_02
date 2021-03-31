@@ -1,7 +1,9 @@
 package guia_02;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.UUID;
+
 
 public class Factura {
     private UUID id = UUID.randomUUID();
@@ -10,12 +12,14 @@ public class Factura {
     private LocalDate date = LocalDate.now();
     private Venta[] item;
 
+
     public Factura() {
     }
 
-    public Factura(Cliente cliente, double monto) {
+    public Factura(Cliente cliente, Venta[] item) {
         this.cliente = cliente;
-        this.monto = monto;
+        // this.monto = monto;
+        this.item = item;
     }
 
     public UUID getId() {
@@ -54,19 +58,31 @@ public class Factura {
         return monto * (1 - cliente.getDescuento());
     }
 
+    public Venta[] getItem() {
+        return item;
+    }
 
-
-    /*public double totalDescuento() {
-        int total = 200;
-        int index;
+    public double totalCompra() {
+        double total = 0;
+        for (Venta i : item) {
+            if (i != null) {
+                total += i.getPrecio();
+            }
+        }
         return total;
-         }
 
-     */
+
+    }
+
+    public double totalDescuento() {
+        double total = 0;
+        return total = (totalCompra() * (1 - cliente.getDescuento()));
+
+    }
 
 
     @Override
     public String toString() {
-        return "Factura[id= " + id + " , fecha= " + date + " , monto= " + monto + " , montoDesc= " + (monto * (1 - cliente.getDescuento())) + " " + cliente.toString() + " ]";
+        return "Factura[id= " + id + " , fecha= " + date + " , monto= " + totalCompra() + " , montoDesc= " + totalDescuento() + " " + cliente.toString() + "\n\n" + Arrays.toString(this.item) + " ]";
     }
 }

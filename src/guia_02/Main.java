@@ -17,12 +17,12 @@ public class Main {
             selected = menu();
             switch (selected) {
                 case 1:
-                    Autor Joshua = new Autor("Joshua", "Bloch", "joshua@email.com", 'M');
+                    Autor autor = new Autor("Joshua", "Bloch", "joshua@email.com", 'M');
 
                     Autor[] autores = new Autor[3];
-                    autores[0] = Joshua;
+                    autores[0] = autor;
                     System.out.println("Autor Princial");
-                    System.out.print(Joshua);
+                    System.out.print(autor);
                     System.out.println("\n");
                     Libro libro = new Libro("Effective Java", 450, 150, autores);
                      System.out.println("Datos iniciales del Libro\n");
@@ -44,14 +44,27 @@ public class Main {
                     limpiarPantalla();
                     break;
                 case 2:
-                    Cliente aron = new Cliente("Aron", "nassa@gmail.com", 0.20);
-                    System.out.println(aron.toString());
-                    Factura nuevoCliente = new Factura(aron, 13000);
-                    System.out.println(nuevoCliente.toString());
-                    Venta nuevaVenta = new Venta("Pan","Pan rallado",200);
-                    Venta nuevaVenta2 = new Venta("Leche","Leche descremada",300);
-                    System.out.println(nuevaVenta.toString());
-                    System.out.println(nuevaVenta2.toString());
+                    System.out.println("Datos del CLiente: ");
+                    Cliente cliente = new Cliente("Aron", "nassa@gmail.com", 0.20);
+                    Venta[] ventas = new Venta[4];
+                    System.out.println(cliente.toString());
+                    Venta venta1 = new Venta("Pan","Pan rallado",200);
+                    ventas[1] =venta1;
+                    Venta venta2 = new Venta("Leche","Leche descremada",300);
+                    ventas[2]=venta2;
+                    System.out.println("Datos de La Facturacion: ");
+                    Factura factura1 = new Factura(cliente,ventas);
+                    System.out.println(factura1);
+                    System.out.println(ventas);
+                    System.out.println("Monto Total de la Compra: "+ factura1.totalCompra());
+                    System.out.println("Monto de la compra con Descuento: "+ factura1.totalDescuento());
+
+
+
+
+
+
+                    System.out.println("\n" );
 
 
                     Pausa.pausar();
