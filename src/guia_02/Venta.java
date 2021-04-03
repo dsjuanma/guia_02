@@ -14,8 +14,7 @@ public class Venta {
     private String nombre;
     private String descripcion;
     private double precio;
-    private Cliente cliente;
-    private Venta[] item;
+
 
     public Venta() {
 
@@ -61,13 +60,11 @@ public class Venta {
         this.precio = precio;
     }
 
-    public Venta[] getItem() {
-        return item;
-    }
+
 
 
     @Override
     public String toString() {
-        return "\n"+"Factura[id= " + id + " ,  Producto= " + nombre + " , Descripcion del producto= " + descripcion + ", Precio= " + precio + " ]";
+        return "\nFactura[id= " + id + " ,  Producto= " + nombre + " , Descripcion del producto= " + descripcion + ", Precio= " + precio + " ]";
     }
 }

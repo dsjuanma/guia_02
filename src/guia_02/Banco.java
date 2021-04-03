@@ -1,5 +1,7 @@
 package guia_02;
 
+import java.util.UUID;
+
 /*
     3. Necesitamos crear un programa para manejar los datos de una Cuenta bancaria de
     un Cliente. Para esto identificamos los atributos id, nombre y género (M o F) para el
@@ -26,5 +28,53 @@ package guia_02;
     ii. Extracción: "El {NombreCliente}, retiró {MontoRetirado}"
 */
 public class Banco {
+
+    //Atributos
+    private UUID uuid;
+    private String nombre;
+    private char genero;
+
+    //Constructores
+
+    public Banco (){
+
+    }
+    public Banco( String nombre, char genero){
+        this.uuid= uuid;
+        this.nombre=nombre;
+        this.genero=genero;
+    }
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(UUID uuid) {
+        this.uuid = uuid;
+    }
+    public String getNombre(){
+        return nombre;
+    }
+
+    public void setNombre(String nombre){
+        this.nombre=nombre;
+    }
+    public char getGenero(){
+        return genero;
+    }
+    public void setGenero(char genero){
+        this.genero=genero;
+    }
+
+    @Override
+    public String toString() {
+        return "Titular{" +
+                "uuid=" + uuid +
+                ", nombre='" + nombre + '\'' +
+                ", genero=" + genero +
+                '}';
+    }
+
+
 
 }

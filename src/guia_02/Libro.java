@@ -105,7 +105,7 @@ public class Libro {
         return "\nLibro: " +
                 "\nTitulo:...... " + this.titulo +
                 "\nPrecio:...... " + this.precio +
-                "\nStock:....... " + this.stock+
+                "\nStock:....... " + this.stock +
                 "\n" + Arrays.toString(this.autores);
     }
 

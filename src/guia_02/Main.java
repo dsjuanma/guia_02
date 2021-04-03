@@ -28,7 +28,7 @@ public class Main {
                     System.out.println("\n");
                     libro.cambioPrecio();
                     libro.cambioStock();
-                    System.out.println(Arrays.toString(libro.getAutor()));
+                    System.out.println(libro);
                     System.out.println(libro.mostrarMensaje());
                     Autor autor1 = new Autor("Alan", "Brado", "Semtex@gmail.com", 'M');
                     Autor autor2 = new Autor("Esteban", "Kito", "demadera@hotmail.com", 'M');
@@ -42,12 +42,12 @@ public class Main {
                 case 2:
                     System.out.println("Datos del CLiente: ");
                     Cliente cliente = new Cliente("Aron", "nassa@gmail.com", 0.20);
-                    Venta[] ventas = new Venta[3];
+                    Venta[] ventas = new Venta[2];
                     System.out.println(cliente.toString());
                     Venta venta1 = new Venta("Pan", "Pan rallado", 200);
-                    ventas[1] = venta1;
+                    ventas[0] = venta1;
                     Venta venta2 = new Venta("Leche", "Leche descremada", 300);
-                    ventas[2] = venta2;
+                    ventas[1] = venta2;
                     System.out.println("\nDatos de La Facturacion: ");
                     Factura factura1 = new Factura(cliente, ventas);
                     System.out.println(factura1);
@@ -62,6 +62,19 @@ public class Main {
                     limpiarPantalla();
                     break;
                 case 3:
+                    Banco titular = new Banco("Pablo Perez", 'M');
+                    Cuenta cuenta = new Cuenta(10000, titular);
+                    System.out.println(cuenta);
+
+                    System.out.println("\nDeposito 150.50, el balance es " + cuenta.depositar(150.50) + "\n");
+                    System.out.println("Retiro 150, el balance es " + cuenta.extraer(150) + "\n");
+                    System.out.println("Retiro 11000.50, el balance es " + cuenta.extraer(11000.50) + "\n");
+                    System.out.println("Deposito 1250.50, el balance es " + cuenta.depositar(1250.50) + "\n");
+
+                    System.out.println("\nOperaciones realizadas:");
+                    for (String ops : cuenta.getOperaciones()) {
+                        if (ops != null) System.out.println(ops);
+                    }
 
                     Pausa.pausar();
                     limpiarPantalla();

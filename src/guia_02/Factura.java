@@ -53,6 +53,9 @@ public class Factura {
         this.date = date;
     }
 
+    public void setItem(Venta[] item) {
+        this.item = item;
+    }
 
     public Venta[] getItem() {
         return item;
@@ -66,8 +69,6 @@ public class Factura {
             }
         }
         return total;
-
-
     }
 
     public double totalDescuento() {
@@ -79,6 +80,6 @@ public class Factura {
 
     @Override
     public String toString() {
-        return "Factura[id= " + id + " , fecha= " + date + " , monto= " + totalCompra() + " , montoDesc= " + totalDescuento() + " " + cliente.toString() + "\n\n" + Arrays.toString(this.item) + " ]";
+               return "Factura[id= " + id + " , fecha= " + date + " , monto= " + totalCompra() + " , montoDesc= " + totalDescuento() + " " + cliente.toString() + "\n\n" + Arrays.toString(this.item) + " ]";
     }
 }
